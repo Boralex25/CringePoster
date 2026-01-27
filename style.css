@@ -8,7 +8,7 @@ body{
 }
 
 img{
-    height: 40%;
+    height: 60%;
     position: absolute;
     user-select: none;
     -webkit-user-drag: none;
@@ -16,9 +16,23 @@ img{
 
 #hom{
     position: absolute;
-    left: 10%;
+    left: -15%;
     top: 20%;
     cursor: pointer;
+    transform-origin: left bottom;
+    animation: hom-rotate 2s linear infinite;
+}
+
+@keyframes hom-rotate{
+    0% {
+        transform: rotateZ(45deg);
+    }
+    50%{
+        transform: rotateZ(35deg);
+    }
+    100%{
+        transform: rotateZ(45deg);
+    }
 }
 
 #mon{
