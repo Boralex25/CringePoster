@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Geist:wght@100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Seymour+One&display=swap');
+
 body{
     padding: 0;
     margin: 0;
@@ -5,6 +7,18 @@ body{
     width: 100%;
     background-color: #2C3E7C;
     overflow: hidden;
+}
+
+#about{
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    font-family: 'Seymour One', sans-serif;
+    color: white;
+    font-size: 200%;
+    transition: transform 0.1s, left 0.1s, top 0.1s;
+    user-select: none;
+    cursor: pointer;
 }
 
 img{
@@ -61,3 +75,11 @@ img{
     display: block;
     height: 100px; /* или сколько нужно */
 }
+
+#start-image{
+    position: absolute;
+    left: 65%;
+    top: 15%;
+    cursor: pointer;
+}
+

@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     let hom = document.querySelector('#hom')
     let snake = document.querySelector('#snake')
-    
+    let about = document.querySelector('#about')
 
     function generateMon(){
         let mon = new Image()
@@ -78,4 +78,21 @@ document.addEventListener('DOMContentLoaded', () => {
         update() 
     }
     renderSnake()
+
+    document.addEventListener('click', () =>{
+        console.log('yesyes')
+        let aboutInterval = setInterval(() =>{
+            let angle = Math.random() * 360
+            about.style.transform = `rotateZ(${angle}deg)`
+
+            let x = Math.random() * (window.innerWidth - about.offsetWidth);
+            let y = Math.random() * (window.innerHeight - about.offsetHeight);
+            about.style.left = `${x}px`;
+            about.style.top = `${y}px`;
+        }, 100)
+
+        setTimeout(() =>{
+            clearInterval(aboutInterval)
+        }, 2000)
+    })
 })
