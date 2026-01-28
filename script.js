@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let rect = snake.getBoundingClientRect()
         let x = rect.left
         let y = rect.top
-        let delX = 20
+        let delX = 80
         let delY = 0
         let isMoving = false
 
@@ -37,13 +37,13 @@ document.addEventListener('DOMContentLoaded', () => {
             canSpawn = false
             let tail = new Image()
             tail.src = "./assets/face.svg"
-            tail.style.height = "12%"
+            tail.style.height = "18%"
             tail.style.left = `${x}px`
             tail.style.top = `${y}px`
             snake.style.opacity = 0
             document.body.appendChild(tail)
-            setTimeout(() => { canSpawn = true }, 420)
-            setTimeout(() => tail.remove(), 2000)
+            setTimeout(() => { canSpawn = true }, 450)
+            setTimeout(() => tail.remove(), 2500)
         }
         function render() {
             snake.style.left = `${x}px`

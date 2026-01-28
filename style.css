@@ -5,8 +5,8 @@ body{
     margin: 0;
     box-sizing: border-box;
     width: 100%;
+    height: auto;
     background-color: #2C3E7C;
-    overflow: hidden;
 }
 
 #about{
@@ -73,7 +73,7 @@ img{
 
 #snake img{
     display: block;
-    height: 100px; /* или сколько нужно */
+    height: 150px;
 }
 
 #start-image{
