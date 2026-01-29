@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let hom = document.querySelector('#hom')
     let snake = document.querySelector('#snake')
     let about = document.querySelector('#about')
+    let first = document.querySelector('#start-image')
+    let end = document.querySelector('#end')
 
     function generateMon(){
         let mon = new Image()
@@ -79,12 +81,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     renderSnake()
 
-    document.addEventListener('click', () =>{
+
+    about.addEventListener('mouseover', () => {
+        about.style.color = "#4581D4"
+    })
+    about.addEventListener('mouseout', () =>{
+        about.style.color = "white"
+    })
+
+    about.addEventListener('click', () =>{
         console.log('yesyes')
         let aboutInterval = setInterval(() =>{
             let angle = Math.random() * 360
             about.style.transform = `rotateZ(${angle}deg)`
-
             let x = Math.random() * (window.innerWidth - about.offsetWidth);
             let y = Math.random() * (window.innerHeight - about.offsetHeight);
             about.style.left = `${x}px`;
@@ -94,5 +103,29 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() =>{
             clearInterval(aboutInterval)
         }, 2000)
+    })
+
+
+    let stupid = new Image()
+    stupid.src = './assets/stupid_face.svg'
+    stupid.style.pointerEvents = 'none'
+
+    first.addEventListener('mouseover', () =>{
+        stupid.style.position = 'absolute'
+        stupid.style.height = '20%'
+        stupid.style.left = `${first.getBoundingClientRect().left + first.getBoundingClientRect().left / 4.8}px`
+        stupid.style.top = `${first.getBoundingClientRect().top + first.getBoundingClientRect().top / 2.5}px`
+        document.body.appendChild(stupid)
+        stupid.className = "rotate-st"
+    })
+
+    first.addEventListener('mouseout', () =>{
+        document.body.removeChild(stupid)
+    })
+
+
+    end.addEventListener('click', () =>{
+        let sound = new Audio("./assets/end-sound.mp3")
+        sound.play()
     })
 })
