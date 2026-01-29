@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     hom.addEventListener("click", (e) => {
+        console.log('homhom')
         generateMon()
     })
 
